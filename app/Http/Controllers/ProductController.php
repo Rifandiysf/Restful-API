@@ -13,7 +13,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $data = Product::join('product_types', 'products.product_type_id', '=', 'product_type_id')
+        $data = Product::join('product_types', 'products.product_type_id', '=', 'product_types.id')
         ->select('products.*', 'product_types.type_name')->get();
         return response([
             "massage" => 'products list',
